@@ -5,4 +5,4 @@ COPY pyproject.toml ./poetry.lock* /code/
 RUN poetry export -f requirements.txt --output requirements.txt --without-hashes
 RUN pip install -r /code/requirements.txt
 COPY . /code
-RUN fastapi dev ./main_service/cmd/main.py
+CMD fastapi dev ./main_service/cmd/main.py
