@@ -1,24 +1,13 @@
-from typing import Annotated
+from main_service.routes import auth
 
-import fastapi.exceptions
-from fastapi import FastAPI, Depends, HTTPException
+from fastapi import FastAPI
 
 
 app = FastAPI()
 
+app.include_router(auth.auth)
 
-def validate(text: str):
-    if text != " ":
-        return text.upper()
-    else:
-        return HTTPException(
-            status_code=400,
-            detail="Пустые данные"
-        )
 
-@app.post("/auth/register")
-def register(text: Annotated[str, Depends(validate)]):
-    return text
 
 
 
