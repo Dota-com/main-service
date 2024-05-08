@@ -4,3 +4,12 @@ version: '3'
 tasks:
   test:
     cmd: pytest --tb=long
+
+  generate:
+    aliases:
+      - gen
+    cmd:
+      python -m grpc_tools.protoc -I./main_service/protos ./main_service/protos/proto/*.proto
+        --pyi_out=./main_service/protos/gen
+        --python_out=./main_service/protos/gen
+        --grpc_python_out=./main_service/protos/gen
