@@ -1,0 +1,45 @@
+syntax = "proto3";
+
+package auth;
+
+
+service AuthServer {
+  rpc AuthLogin(AuthLoginRequest) returns (AuthLoginResponse);
+  rpc AuthRegistration(AuthRegistrationRequest) returns (AuthRegistrationResponse);
+  rpc AuthRoles(AuthRolesRequest) returns (AuthRolesResponse);
+  rpc AuthAccessPermission(AuthLoginResponse) returns (AccessPermissionResponse);
+}
+
+message AuthRegistrationRequest {
+    string Login = 1;
+    string Password = 2;
+    string Password2 = 3;
+    int64 SteamId = 4;
+    string Email = 5;
+}
+
+message AuthLoginRequest {
+  string Login = 1;
+  string Password = 2;
+}
+
+message AuthRegistrationResponse {
+  int64 UserId = 1;
+}
+
+message AuthLoginResponse {
+  string Token = 1;
+}
+
+message AuthRolesResponse {
+  int32 RolesFlag = 1;
+  string RoleName = 2;
+}
+
+message AuthRolesRequest {
+  int64 UserId = 1;
+}
+
+message AccessPermissionResponse {
+  string AccessPermission = 1;
+}
