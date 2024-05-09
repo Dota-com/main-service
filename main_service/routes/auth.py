@@ -18,7 +18,7 @@ auth = APIRouter(
 
 
 @auth.post("/register")
-async def register(user: AuthRegisterModel, client: Any = Depends(Client)) -> JSONResponse:
+async def AuthRegisterFast(user: AuthRegisterModel, client: Any = Depends(Client)) -> JSONResponse:
     try:
         client_register = client.AuthRegistration(
             Auth_pb2.AuthRegistrationRequest(

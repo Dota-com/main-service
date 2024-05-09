@@ -14,9 +14,9 @@ class AuthRegisterModel(BaseModel):
     @classmethod
     def validate_login(cls, value):
         login = len(value)
-        if login > 16 or login < 4:
-            raise ValueError("Короткий логин")
-        return value
+        if login < 16 or login > 4:
+            return value
+        raise ValueError("Не корректная длина логина")
 
     @field_validator("email")
     @classmethod
