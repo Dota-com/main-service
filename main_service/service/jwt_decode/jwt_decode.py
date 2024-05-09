@@ -1,5 +1,3 @@
-from datetime import datetime
-import logging
 import time
 import jwt
 
@@ -12,8 +10,6 @@ from google.protobuf.json_format import MessageToDict
 
 # TODO delete it
 key = 'add'
-
-log = logging.getLogger(__name__)
 
 
 async def jwt_decode(token: str):

@@ -2,6 +2,9 @@ version: '3'
 
 
 tasks:
+  run:
+    cmd: fastapi dev ./main_service/cmd/main.py
+
   test:
     cmd: pytest --tb=long
 
