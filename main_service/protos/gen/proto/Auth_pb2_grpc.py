@@ -59,6 +59,11 @@ class AuthServerStub(object):
                 request_serializer=proto_dot_Auth__pb2.AuthLoginResponse.SerializeToString,
                 response_deserializer=proto_dot_Auth__pb2.AccessPermissionResponse.FromString,
                 _registered_method=True)
+        self.AuthLogout = channel.unary_unary(
+                '/auth.AuthServer/AuthLogout',
+                request_serializer=proto_dot_Auth__pb2.AuthLoginResponse.SerializeToString,
+                response_deserializer=proto_dot_Auth__pb2.LogoutResponse.FromString,
+                _registered_method=True)
 
 
 class AuthServerServicer(object):
@@ -88,6 +93,12 @@ class AuthServerServicer(object):
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
+    def AuthLogout(self, request, context):
+        """Missing associated documentation comment in .proto file."""
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
 
 def add_AuthServerServicer_to_server(servicer, server):
     rpc_method_handlers = {
@@ -110,6 +121,11 @@ def add_AuthServerServicer_to_server(servicer, server):
                     servicer.AuthAccessPermission,
                     request_deserializer=proto_dot_Auth__pb2.AuthLoginResponse.FromString,
                     response_serializer=proto_dot_Auth__pb2.AccessPermissionResponse.SerializeToString,
+            ),
+            'AuthLogout': grpc.unary_unary_rpc_method_handler(
+                    servicer.AuthLogout,
+                    request_deserializer=proto_dot_Auth__pb2.AuthLoginResponse.FromString,
+                    response_serializer=proto_dot_Auth__pb2.LogoutResponse.SerializeToString,
             ),
     }
     generic_handler = grpc.method_handlers_generic_handler(
@@ -219,6 +235,33 @@ class AuthServer(object):
             '/auth.AuthServer/AuthAccessPermission',
             proto_dot_Auth__pb2.AuthLoginResponse.SerializeToString,
             proto_dot_Auth__pb2.AccessPermissionResponse.FromString,
+            options,
+            channel_credentials,
+            insecure,
+            call_credentials,
+            compression,
+            wait_for_ready,
+            timeout,
+            metadata,
+            _registered_method=True)
+
+    @staticmethod
+    def AuthLogout(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(
+            request,
+            target,
+            '/auth.AuthServer/AuthLogout',
+            proto_dot_Auth__pb2.AuthLoginResponse.SerializeToString,
+            proto_dot_Auth__pb2.LogoutResponse.FromString,
             options,
             channel_credentials,
             insecure,

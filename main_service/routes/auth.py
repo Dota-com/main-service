@@ -54,3 +54,19 @@ async def AuthLoginFast(user:  AuthLoginModel, client: Any = Depends(Client)) ->
             status_code=400,
             detail=e.details()
         )
+
+
+@auth.get("/logout")
+def AuthLogoutFast(token: str, client: Any = Depends(Client)):
+    try:
+        client_logout = client.AuthLogout(
+            Auth_pb2.AuthLoginResponse(
+                Token=token
+            )
+        )
+        return JSONResponse(MessageToDict(client_logout))
+    except _InactiveRpcError as e:
+        raise HTTPException(
+            status_code=400,
+            detail=e.details()
+        )
