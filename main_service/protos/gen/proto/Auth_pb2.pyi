@@ -18,6 +18,12 @@ class AuthRegistrationRequest(_message.Message):
     Email: str
     def __init__(self, Login: _Optional[str] = ..., Password: _Optional[str] = ..., Password2: _Optional[str] = ..., SteamId: _Optional[int] = ..., Email: _Optional[str] = ...) -> None: ...
 
+class LogoutResponse(_message.Message):
+    __slots__ = ("Logout",)
+    LOGOUT_FIELD_NUMBER: _ClassVar[int]
+    Logout: bool
+    def __init__(self, Logout: bool = ...) -> None: ...
+
 class AuthLoginRequest(_message.Message):
     __slots__ = ("Login", "Password")
     LOGIN_FIELD_NUMBER: _ClassVar[int]

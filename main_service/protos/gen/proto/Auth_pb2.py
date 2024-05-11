@@ -14,27 +14,30 @@ _sym_db = _symbol_database.Default()
 
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x10proto/Auth.proto\x12\x04\x61uth\"m\n\x17\x41uthRegistrationRequest\x12\r\n\x05Login\x18\x01 \x01(\t\x12\x10\n\x08Password\x18\x02 \x01(\t\x12\x11\n\tPassword2\x18\x03 \x01(\t\x12\x0f\n\x07SteamId\x18\x04 \x01(\x03\x12\r\n\x05\x45mail\x18\x05 \x01(\t\"3\n\x10\x41uthLoginRequest\x12\r\n\x05Login\x18\x01 \x01(\t\x12\x10\n\x08Password\x18\x02 \x01(\t\"*\n\x18\x41uthRegistrationResponse\x12\x0e\n\x06UserId\x18\x01 \x01(\x03\"\"\n\x11\x41uthLoginResponse\x12\r\n\x05Token\x18\x01 \x01(\t\"8\n\x11\x41uthRolesResponse\x12\x11\n\tRolesFlag\x18\x01 \x01(\x05\x12\x10\n\x08RoleName\x18\x02 \x01(\t\"\"\n\x10\x41uthRolesRequest\x12\x0e\n\x06UserId\x18\x01 \x01(\x03\"4\n\x18\x41\x63\x63\x65ssPermissionResponse\x12\x18\n\x10\x41\x63\x63\x65ssPermission\x18\x01 \x01(\t2\xac\x02\n\nAuthServer\x12<\n\tAuthLogin\x12\x16.auth.AuthLoginRequest\x1a\x17.auth.AuthLoginResponse\x12Q\n\x10\x41uthRegistration\x12\x1d.auth.AuthRegistrationRequest\x1a\x1e.auth.AuthRegistrationResponse\x12<\n\tAuthRoles\x12\x16.auth.AuthRolesRequest\x1a\x17.auth.AuthRolesResponse\x12O\n\x14\x41uthAccessPermission\x12\x17.auth.AuthLoginResponse\x1a\x1e.auth.AccessPermissionResponseb\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x10proto/Auth.proto\x12\x04\x61uth\"m\n\x17\x41uthRegistrationRequest\x12\r\n\x05Login\x18\x01 \x01(\t\x12\x10\n\x08Password\x18\x02 \x01(\t\x12\x11\n\tPassword2\x18\x03 \x01(\t\x12\x0f\n\x07SteamId\x18\x04 \x01(\x03\x12\r\n\x05\x45mail\x18\x05 \x01(\t\" \n\x0eLogoutResponse\x12\x0e\n\x06Logout\x18\x01 \x01(\x08\"3\n\x10\x41uthLoginRequest\x12\r\n\x05Login\x18\x01 \x01(\t\x12\x10\n\x08Password\x18\x02 \x01(\t\"*\n\x18\x41uthRegistrationResponse\x12\x0e\n\x06UserId\x18\x01 \x01(\x03\"\"\n\x11\x41uthLoginResponse\x12\r\n\x05Token\x18\x01 \x01(\t\"8\n\x11\x41uthRolesResponse\x12\x11\n\tRolesFlag\x18\x01 \x01(\x05\x12\x10\n\x08RoleName\x18\x02 \x01(\t\"\"\n\x10\x41uthRolesRequest\x12\x0e\n\x06UserId\x18\x01 \x01(\x03\"4\n\x18\x41\x63\x63\x65ssPermissionResponse\x12\x18\n\x10\x41\x63\x63\x65ssPermission\x18\x01 \x01(\t2\xe9\x02\n\nAuthServer\x12<\n\tAuthLogin\x12\x16.auth.AuthLoginRequest\x1a\x17.auth.AuthLoginResponse\x12Q\n\x10\x41uthRegistration\x12\x1d.auth.AuthRegistrationRequest\x1a\x1e.auth.AuthRegistrationResponse\x12<\n\tAuthRoles\x12\x16.auth.AuthRolesRequest\x1a\x17.auth.AuthRolesResponse\x12O\n\x14\x41uthAccessPermission\x12\x17.auth.AuthLoginResponse\x1a\x1e.auth.AccessPermissionResponse\x12;\n\nAuthLogout\x12\x17.auth.AuthLoginResponse\x1a\x14.auth.LogoutResponseB\x1aZ\x18\x64ota_traker.auth.v1;authb\x06proto3')
 
 _globals = globals()
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, _globals)
 _builder.BuildTopDescriptorsAndMessages(DESCRIPTOR, 'proto.Auth_pb2', _globals)
 if not _descriptor._USE_C_DESCRIPTORS:
-  DESCRIPTOR._loaded_options = None
+  _globals['DESCRIPTOR']._loaded_options = None
+  _globals['DESCRIPTOR']._serialized_options = b'Z\030dota_traker.auth.v1;auth'
   _globals['_AUTHREGISTRATIONREQUEST']._serialized_start=26
   _globals['_AUTHREGISTRATIONREQUEST']._serialized_end=135
-  _globals['_AUTHLOGINREQUEST']._serialized_start=137
-  _globals['_AUTHLOGINREQUEST']._serialized_end=188
-  _globals['_AUTHREGISTRATIONRESPONSE']._serialized_start=190
-  _globals['_AUTHREGISTRATIONRESPONSE']._serialized_end=232
-  _globals['_AUTHLOGINRESPONSE']._serialized_start=234
-  _globals['_AUTHLOGINRESPONSE']._serialized_end=268
-  _globals['_AUTHROLESRESPONSE']._serialized_start=270
-  _globals['_AUTHROLESRESPONSE']._serialized_end=326
-  _globals['_AUTHROLESREQUEST']._serialized_start=328
-  _globals['_AUTHROLESREQUEST']._serialized_end=362
-  _globals['_ACCESSPERMISSIONRESPONSE']._serialized_start=364
-  _globals['_ACCESSPERMISSIONRESPONSE']._serialized_end=416
-  _globals['_AUTHSERVER']._serialized_start=419
-  _globals['_AUTHSERVER']._serialized_end=719
+  _globals['_LOGOUTRESPONSE']._serialized_start=137
+  _globals['_LOGOUTRESPONSE']._serialized_end=169
+  _globals['_AUTHLOGINREQUEST']._serialized_start=171
+  _globals['_AUTHLOGINREQUEST']._serialized_end=222
+  _globals['_AUTHREGISTRATIONRESPONSE']._serialized_start=224
+  _globals['_AUTHREGISTRATIONRESPONSE']._serialized_end=266
+  _globals['_AUTHLOGINRESPONSE']._serialized_start=268
+  _globals['_AUTHLOGINRESPONSE']._serialized_end=302
+  _globals['_AUTHROLESRESPONSE']._serialized_start=304
+  _globals['_AUTHROLESRESPONSE']._serialized_end=360
+  _globals['_AUTHROLESREQUEST']._serialized_start=362
+  _globals['_AUTHROLESREQUEST']._serialized_end=396
+  _globals['_ACCESSPERMISSIONRESPONSE']._serialized_start=398
+  _globals['_ACCESSPERMISSIONRESPONSE']._serialized_end=450
+  _globals['_AUTHSERVER']._serialized_start=453
+  _globals['_AUTHSERVER']._serialized_end=814
 # @@protoc_insertion_point(module_scope)
